@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import moviesStore from "./modules/movies"
+import loaderStore from "./modules/loader"
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store =  new Vuex.Store({
     state: {},
     mutations: {},
     actions: {},
     modules: {
-        moviesStore
+        moviesStore,
+        loaderStore
     }
-})
+});
+
+store.dispatch('initMoviesStore');
+export default store;
